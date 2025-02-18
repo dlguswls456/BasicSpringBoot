@@ -10,15 +10,18 @@ import com.example.hello_spring.domain.Member;
 import com.example.hello_spring.repository.MemberRepository;
 import com.example.hello_spring.repository.MemoryMemberRepository;
 
+import jakarta.transaction.Transactional;
+
 // 서비스
 // 레포지토리와 도메인을 활용해서 '비즈니스 로직' 작성
 @Service
+@Transactional
 public class MemberService {
 
 	private final MemberRepository memberRepository;
 
-	// 외부에서 넣어주도록 함
-	@Autowired
+//	// 외부에서 넣어주도록 함
+//	@Autowired
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
